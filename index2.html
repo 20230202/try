@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Game</title>
+  <style>
+    body 
+    {
+        display:flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9; /* Light background color */
+    }
+    #submitButton {
+      font-size: 18px;
+      position: absolute;
+      border-radius: 10px;
+      
+    }
+    #nameInput
+    {
+      border: 2px solid #87CEFA;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+
+    }
+
+  </style>
+</head>
+<body>
+  <h2>Enter your name:</h2>
+  <div class="content">
+<input type="text" id="nameInput">
+  <button id="submitButton">Submit</button>
+  </div>
+  
+
+  <script>
+    let submitButton = document.getElementById("submitButton");
+    let nameInput = document.getElementById("nameInput");
+
+    // Move the button randomly when mouseover
+    submitButton.addEventListener("mouseover", function() {
+      let randomX = Math.floor(Math.random() * window.innerWidth);
+      let randomY = Math.floor(Math.random() * window.innerHeight);
+
+      submitButton.style.left = randomX + "px";
+      submitButton.style.top = randomY + "px";
+    });
+
+    // Show name when button clicked
+    submitButton.addEventListener("click", function() {
+      alert("You clicked the button! Name: " + nameInput.value);
+    });
+  </script>
+</body>
+</html>
